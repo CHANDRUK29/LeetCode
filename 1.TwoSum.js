@@ -45,4 +45,4 @@ var twoSum = function (nums, target) {
     }
 };
 
-// var nums = [2,7,11,15]
+var nums = [2,7,11,15]
