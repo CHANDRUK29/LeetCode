@@ -34,15 +34,16 @@ Only one valid answer exists.
 var twoSum = function (nums, target) {
     //    var targ = target;
     for (var i = 0; i < nums.length; i++) {
-        for (var j = i+1; j < nums.length; j++) {
+        for (var j = i + 1; j < nums.length; j++) {
             var add = nums[i] + nums[j]
             if (add === target) {
                 var array = [i, j]
-                console.log(array)
+                // console.log(array)
                 return array;
             }
         }
     }
 };
 
-var nums = [2,7,11,15]
+
+console.log(twoSum([2, 7, 11, 15], 9))
