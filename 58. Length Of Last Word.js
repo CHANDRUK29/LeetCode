@@ -37,8 +37,7 @@ There will be at least one word in s.
  */
 var lengthOfLastWord = function (s) {
     let a = s.trim().split(' ')
-    let strlen = a[a.length - 1].length
-    console.log(strlen)
+    let strlen = a[a.length - 1].length;
     return strlen;
 };
 

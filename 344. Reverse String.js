@@ -29,7 +29,6 @@ var reverseString = function (s) {
     for (let i = 0; i < s.length - 1 - i; i++) {
         [s[i], s[s.length - 1 - i]] = [s[s.length - 1 - i], s[i]]
     }
-    console.log(s)
     return s;
 };
 
