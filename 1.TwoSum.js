@@ -32,15 +32,29 @@ Only one valid answer exists.
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    //    var targ = target;
-    for (var i = 0; i < nums.length; i++) {
-        for (var j = i + 1; j < nums.length; j++) {
-            var add = nums[i] + nums[j]
-            if (add === target) {
-                var array = [i, j]
-                // console.log(array)
-                return array;
-            }
+    // solution O(N^2) complexity
+    // for (var i = 0; i < nums.length; i++) {
+    //     for (var j = i + 1; j < nums.length; j++) {
+    //         var add = nums[i] + nums[j]
+    //         if (add === target) {
+    //             var array = [i, j]
+    //             // console.log(array)
+    //             return array;
+    //         }
+    //     }
+    // }
+
+    //solution using two pointers which is O(N) complexity
+    let l = 0;
+    let r = nums.length - 1
+    while (l < r) {
+        let output = nums[l] + nums[r]
+        if (output == target) {
+            return [l, r]
+        } else if (output < target) {
+            l++;
+        } else if (output > target) {
+            r--;
         }
     }
 };
