@@ -36,13 +36,25 @@ s consists only of printable ASCII characters.
  */
 var isPalindrome = function (s) {
     let str = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-    console.log(str)
-    let k = str.length - 1;
-    for (let i = 0; i < str.length / 2; i++) {
-        if (str[i] != str[k]) {
+    // console.log(str)
+    // let k = str.length - 1;
+    // for (let i = 0; i < str.length / 2; i++) {
+    //     if (str[i] != str[k]) {
+    //         return false
+    //     }
+    //     k--;
+    // }
+    // return true
+
+ //Alternate solution using while loop
+    let l = 0
+    let r = str.length - 1
+    while(l<r){
+        if(str[l]!=str[r]){
             return false
         }
-        k--;
+        r--;
+        l++;
     }
     return true
 };
