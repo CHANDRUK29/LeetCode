@@ -52,13 +52,27 @@ maxDepth <= 1000
 
 */
 
-
 /**
  * @param {Array} arr
  * @param {number} depth
  * @return {Array}
  */
 var flat = function (arr, n) {
-    let array = arr.flat(n)
-    return array;
+    //inbuild method
+    // let array = arr.flat(n)
+    // return array;
+
+    // approach using for loop
+    function flattenArray(array, depth) {
+        let result = []
+        for (let i = 0; i < array.length; i++) {
+            if (Array.isArray(array[i]) && depth > 0) {
+                result.push(...flattenArray(array[i], depth - 1))
+            } else {
+                result.push(array[i])
+            }
+        }
+        return result;
+    }
+    return flattenArray(arr, n);
 };
